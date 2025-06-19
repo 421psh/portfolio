@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body {
+            min-height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            background-image: url('./docs/images/background.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: repeat;
+        }
+
+        .container {
+            flex: 1;
+        }
+
+        .photo-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center; /* vertical centering */
+            justify-content: flex-start;
+            padding-top: 1vh;
+            margin-left: 1vh;
+            margin-right: 1vh;
+            background-color: rgba(0, 3, 37, 0.5);
+            border-radius: 5%;
+            gap: 3vw;
+        }
+
+        .photo {
+            flex: 0 0 auto;
+            text-align: center;
+        }
+
+        .photo img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            border-radius: 5%;
+        }
+
+        .photo-text {
+            color: white;
+            font-size: 8vh;
+            text-align: left;
+        }
+
+        .email-link {
+            font-size: 0.35em; /* Much smaller than the name */
+            color: palegoldenrod; /* Soft gold, stands out on dark bg */
+            text-decoration: none; /* Remove default underline */
+            font-family: 'Fira Mono', 'Consolas', monospace; /* Optional: monospace for email */
+            background: rgba(255, 255, 255, 0.05); /* Subtle background */
+            padding: 0.15em 0.4em;
+            border-radius: 0.3em;
+            transition: background 0.2s, color 0.2s;
+            vertical-align: top;
+            margin-top: 0.5em;
+            display: inline-block;
+        }
+
+        .email-link:hover {
+            background: darkgoldenrod;
+            color: #1a1a1a;
+            text-decoration: underline;
+        }
+
+        main {
+            color: lightgoldenrodyellow;
+            margin-top: 2vh;
+            margin-left: 1vh;
+            margin-right: 1vh;
+            background-color: rgba(0, 3, 37, 0.5);
+            border-radius: 5%;
+            padding-top: 2vh;
+            padding-bottom: 8vh;
+        }
+
+        main section {
+            font-size: 2.6vh;
+            margin-left: 4vh;
+        }
+
+        .text-about-me {
+            font-size: 2.2vh;
+            margin-left: 7vh;
+            color: white;
+        }
+
+        .text-about-achievements {
+            font-size: 2.2vh;
+            margin-left: 7vh;
+            color: white;
+        }
+
+        .section-extra-margin {
+            font-size: 2vh;
+            margin-left: 7vh;
+        }
+
+        .link {
+            color: lightgoldenrodyellow;
+        }
+
+        .additional-text {
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="photo-section">
+        <div class="photo">
+            <img src="./docs/images/persons/person_1_crop.jpg" alt="Person 1">
+        </div>
+        <div class="photo-text">
+            <p>
+                Павел<br>
+                Ширяев<br>
+                <a href="mailto:shiryaevpp@bk.ru"
+                   class="email-link">shiryaevpp@bk.ru</a>
+            </p>
+        </div>
+    </div>
+
+    <main>
+        <section><h1>Обо мне</h1></section>
+        <section id="text-about-me" class="text-about-me">Более пяти лет занимаюсь
+            разработкой, автоматизацией и оптимизацией полного цикла создания сервисов с
+            применением алгоритмов глубокого обучения — от сбора и подготовки данных до
+            запуска готовых приложений. В своей работе активно внедряю современные
+            MLOps-практики и инструменты, чтобы обеспечить стабильность и
+            масштабируемость решений. В своих проектах помогаю решать практические
+            задачи, которые действительно нужны для работы бизнеса. Руковожу командой
+            и стараюсь выстраивать рабочие процессы так, чтобы всем было комфортно и
+            понятно. Для меня важно, чтобы каждый мог спокойно работать, делиться идеями
+            и вместе добиваться хороших результатов.
+        </section>
+        <section><h1>Достижения</h1></section>
+        <section id="text-about-achievements" class="text-about-achievements">Ниже вы
+            можете ознакомиться с результатами и достижениями, которых удалось достичь
+            мне и команде под моим руководством за последние годы.
+        </section>
+        <section id="kaggle" class="section-extra-margin">
+            <h2>Kaggle соревнования</h2>
+            <ul>
+                <li>
+                    <a href="https://www.kaggle.com/competitions/understanding_cloud_organization"
+                       class="link">Understanding Clouds from Satellite Images</a> -
+                    <span
+                            class="additional-text">Серебрянная медаль</span>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/competitions/pku-autonomous-driving"
+                       class="link">Peking University/Baidu - Autonomous Driving</a> -
+                    <span
+                            class="additional-text">Бронзовая медаль</span>
+                </li>
+            </ul>
+        </section>
+        <section id="videos" class="section-extra-margin">
+            <h2>Видео и выступления</h2>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/live/FjIcnb-RWUU?si=cQygr9uRTvSAtzur&t=5737"
+                       class="link">Edge AI для агросектора: видеоаналитика на
+                        комбайнах</a> - <span
+                        class="additional-text">MLечный путь 25, апрель 2025, г.
+                    Санкт-Петербург</span>
+                </li>
+                <li>
+                    <a href="https://rutube.ru/video/30351e0f848212b00408b57deda5e950/"
+                       class="link">Машинное зрение для мониторинга свиней</a> - <span
+                        class="additional-text">Kazan Digital Week 2024, сентябрь
+                    2024, г.
+                    Казань</span>
+                </li>
+                <li>
+                    <a href="https://rutube.ru/video/e3e0c0fdef70288021a6a1034cc6741c/"
+                       class="link">Свиньи и Пиксели: Как ML улучшает жизнь на
+                        ферме</a> - <span
+                        class="additional-text">IT CAMP «Газпром нефти», сентябрь
+                    2024, г.
+                    Сириус</span>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=ZCJ29l_-azw" class="link">Active
+                        Learning в задаче определения температуры животных</a> - <span
+                        class="additional-text">CodeFest 14, май 2024, г.
+                    Новосибирск</span>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=FAxqEVv-Ujc" class="link">Оптимизация
+                        работы видеоаналитических сервисов в животноводстве с помощью
+                        Prefect</a> - <span
+                        class="additional-text">MLечный путь 23, сентябрь 2023, г.
+                    Санкт-Петербург</span>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=GJbvAMN_-6g" class="link">CTRL@VISION
+                        – технология машинного зрения для автоматизации движения
+                        рельсового транспорт</a> - <span
+                        class="additional-text">Презентация разрабатываемой системы
+                контроля и управления на основе машинного зрения </span>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=DFwbWvvkoR8" class="link">Дискуссия
+                        «Потребности ML рынка России»</a> - <span
+                        class="additional-text">MLечный путь 23, сентябрь 2023, г.
+                    Санкт-Петербург</span>
+                </li>
+            </ul>
+        </section>
+        <section id="articles" class="section-extra-margin">
+            <h2>Статьи</h2>
+            <ul>
+                <li>
+                    <a href="https://habr.com/ru/companies/selectel/articles/909258/"
+                       class="link">MLечный путь 2025 — знания, опыт, коммьюнити. Как
+                        это было?</a> - <span
+                        class="additional-text">Статья Хабр</span>
+                </li>
+                <li>
+                    <a href="https://habr.com/ru/companies/selectel/articles/779740/"
+                       class="link">ML в животноводстве. Как ГК «Русагро» училось
+                        считать
+                        поголовье свиней</a> - <span
+                        class="additional-text">Статья Хабр</span>
+                </li>
+                <li>
+                    <a href="https://www.jetinfo.ru/journals/kak-ukrotit-lavinu-dannyh/"
+                       class="link">Как мы разработали сервис для анализа поведения
+                        свиней</a> - <span
+                        class="additional-text">Статья в журнале JetInfo (cтраница
+                90)</span>
+                </li>
+                <li>
+                    <a href="https://tmhsmart.ru/upload/iblock/5bb/7xrn110xtgo7s98l6qgej9prdwnhuc8f.pdf"
+                       class="link">Оптимизация модели нейронной сети U-HarDNet-70 для
+                        сегментации железнодорожного пути</a> - <span
+                        class="additional-text">Статья в журнале "Транспорт
+                    Российской Федерации"</span>
+                </li>
+                </li>
+                <li>
+                    <a href="https://tmhsmart.ru/upload/iblock/9b0/9e68q42n9pnolgvzt9g07zz7vaanvkwy.pdf"
+                       class="link">Метод визуального распознавания местности NetVLAD
+                        для локализации локомотива</a> - <span
+                        class="additional-text">Статья в журнале "Автоматика,
+                    Связь, Информатика"</span>
+                </li>
+            </ul>
+        </section>
+        <section id="other" class="section-extra-margin">
+            <h2>Прочее</h2>
+            <ul>
+                <li>
+                    <a href="https://scholar.google.com/citations?user=0Tj14WsAAAAJ&hl"
+                       class="link">Профиль в Google Scholar</a> -
+                    <span
+                            class="additional-text">Автор научных статей по
+                        термоэлектрической и наноинженерной тематике,
+                        индексируемых в Scopus и Web of Science</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
+<!-- God bless ChatGPT. -->
