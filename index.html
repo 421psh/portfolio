@@ -107,8 +107,12 @@
             border-radius: 0.3em;
             transition: background 0.2s, color 0.2s;
             vertical-align: top;
-            margin-top: 0.5em;
+            margin-top: 0.8em;
             display: inline-block;
+        }
+
+        .email-link + br + .email-link {
+            margin-top: 0.1em; /* Small vertical gap between links */
         }
 
         .email-link:hover {
@@ -150,6 +154,12 @@
             margin-left: 7vh;
         }
 
+        .text-courses {
+            font-size: 2vh;
+            margin-left: 0vh;
+            color: white;
+        }
+
         .link {
             color: lightgoldenrodyellow;
         }
@@ -173,6 +183,8 @@
                 Ширяев<br>
                 <a href="mailto:shiryaevpp@bk.ru"
                    class="email-link">shiryaevpp@bk.ru</a>
+                <br>
+                <a href="https://t.me/psh421" class="email-link">@psh421</a>
             </p>
         </div>
     </div>
@@ -211,6 +223,24 @@
                        class="link">Peking University/Baidu - Autonomous Driving</a> -
                     <span
                             class="additional-text">Бронзовая медаль</span>
+                </li>
+            </ul>
+        </section>
+        <section id="courses" class="section-extra-margin">
+            <h2>Пройденные курсы</h2>
+            <ul>
+                <li>
+                    <text class="text-courses">System design - Karpov.Courses</text>
+                </li>
+                <li>
+                    <text class="text-courses">Продакт-менеджер для специалистов
+                        с опытом - Яндекс Практикум
+                    </text>
+                </li>
+                <li>
+                    <text class="text-courses">Алгоритмы и структуры данных -
+                        Яндекс Практикум
+                    </text>
                 </li>
             </ul>
         </section>
