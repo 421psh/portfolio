@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
+        :root {
+            font-size: calc(12px + 0.3vw); /* Responsive base font size */
+        }
+
         html, body {
-            min-height: 100%;
+            min-height: 100vh;
             margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
+            overflow-x: hidden;
         }
 
         body {
             display: flex;
             flex-direction: column;
-            margin: 0;
-            padding: 0;
             background-image: url('./docs/images/background.webp');
             background-size: cover;
             background-position: center;
@@ -23,6 +27,11 @@
 
         .container {
             flex: 1;
+            width: 100%;
+            max-width: 3000px;
+            margin: 0 auto;
+            padding: 0 2vw;
+            box-sizing: border-box;
         }
 
         .photo-section {
@@ -30,89 +39,55 @@
             flex-direction: row;
             align-items: center;
             justify-content: flex-start;
-            padding-top: 1vh;
-            margin-left: 1vh;
-            margin-right: 1vh;
+            padding: 2vh 2vw;
+            margin: 1vh 1vw;
             background-color: rgba(0, 3, 37, 0.5);
-            border-radius: 5%;
+            border-radius: 2rem;
             gap: 3vw;
-            flex-wrap: wrap; /* allow wrapping on small screens */
+            flex-wrap: wrap;
         }
 
         .photo {
             flex: 0 0 auto;
             text-align: center;
             min-width: 0;
+            width: 100%;
+            max-width: 300px;
         }
 
         .photo img {
             width: 100%;
-            max-width: 300px;
             height: auto;
-            border-radius: 5%;
+            border-radius: 1rem;
             display: block;
+            object-fit: contain;
         }
 
         .photo-text {
             color: white;
-            font-size: 8vh;
+            font-size: clamp(1.5rem, 4vw, 3.5rem);
             text-align: left;
             word-break: break-word;
             min-width: 0;
-        }
-
-        /* Responsive adjustments for tablets and phones */
-        @media (max-width: 900px) {
-            .photo-section {
-                gap: 2vw;
-            }
-
-            .photo-text {
-                font-size: 5vh;
-            }
-
-            .photo img {
-                max-width: 200px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .photo-section {
-                flex-direction: column;
-                align-items: center;
-                gap: 2vh;
-                padding-top: 2vh;
-                margin-left: 0.5vh;
-                margin-right: 0.5vh;
-            }
-
-            .photo-text {
-                font-size: 3.5vh;
-                text-align: center;
-            }
-
-            .photo img {
-                max-width: 60vw;
-                min-width: 120px;
-            }
+            line-height: 1.2;
         }
 
         .email-link {
-            font-size: 0.35em; /* Much smaller than the name */
-            color: palegoldenrod; /* Soft gold, stands out on dark bg */
-            text-decoration: none; /* Remove default underline */
-            font-family: 'Fira Mono', 'Consolas', monospace; /* Optional: monospace for email */
-            background: rgba(255, 255, 255, 0.05); /* Subtle background */
+            font-size: 1.6rem;
+            color: palegoldenrod;
+            text-decoration: none;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            background: rgba(255, 255, 255, 0.05);
             padding: 0.15em 0.4em;
             border-radius: 0.3em;
             transition: background 0.2s, color 0.2s;
             vertical-align: top;
-            margin-top: 0.8em;
+            margin-top: 0.2em;
             display: inline-block;
         }
 
         .email-link + br + .email-link {
-            margin-top: 0.1em; /* Small vertical gap between links */
+            margin-top: 0.001em;
         }
 
         .email-link:hover {
@@ -123,55 +98,129 @@
 
         main {
             color: lightgoldenrodyellow;
-            margin-top: 2vh;
-            margin-left: 1vh;
-            margin-right: 1vh;
+            margin: 2vh 1vw;
             background-color: rgba(0, 3, 37, 0.5);
-            border-radius: 5%;
-            padding-top: 2vh;
-            padding-bottom: 8vh;
+            border-radius: 2rem;
+            padding: 2vh 3vw 4vh;
         }
 
         main section {
-            font-size: 2.6vh;
-            margin-left: 4vh;
+            font-size: 1.1rem;
+            margin-left: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .text-about-me {
-            font-size: 2.2vh;
-            margin-left: 7vh;
-            color: white;
+        h1 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            margin-bottom: 1rem;
         }
 
+        h2 {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .text-about-me,
         .text-about-achievements {
-            font-size: 2.2vh;
-            margin-left: 7vh;
+            font-size: 1.2rem;
+            margin-left: 1.5rem;
             color: white;
+            line-height: 1.2;
         }
 
         .section-extra-margin {
-            font-size: 2vh;
-            margin-left: 7vh;
+            font-size: 1.2rem;;
+            margin-left: 1.5rem;
         }
 
         .text-courses {
-            font-size: 2vh;
-            margin-left: 0vh;
+            font-size: 1.2rem;;
             color: white;
         }
 
         .link {
             color: lightgoldenrodyellow;
+            word-break: break-word;
+            display: inline-block;
+            margin-bottom: 0.3rem;
         }
 
         .additional-text {
             color: white;
+            display: inline-block;
         }
 
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .photo-section {
+                gap: 2vw;
+            }
+
+            .photo {
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 3vw;
+            }
+
+            .photo-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1.5vh;
+                padding: 3vh 4vw;
+            }
+
+            .photo-text {
+                text-align: center;
+            }
+
+            main section {
+                margin-left: 0.5rem;
+            }
+
+            .text-about-me,
+            .text-about-achievements,
+            .section-extra-margin {
+                margin-left: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                font-size: 14px;
+            }
+
+            .photo {
+                max-width: 200px;
+            }
+
+            .photo-text {
+                font-size: clamp(1.5rem, 6vw, 2.5rem);
+            }
+
+            main {
+                margin: 1vh 0;
+                padding: 2vh 4vw;
+            }
+        }
     </style>
 </head>
 <body>
 
+<!-- Rest of your HTML content remains exactly the same -->
 <div class="container">
     <div class="photo-section">
         <div class="photo">
@@ -355,4 +404,3 @@
 
 </body>
 </html>
-<!-- God bless ChatGPT. -->
